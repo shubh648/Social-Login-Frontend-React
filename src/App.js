@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Facebook from './components/Facebook';
+import Google from './components/Google';
+import Instagram from './components/Instagram';
+import Twitter from './components/Twitter'
 
 class App extends Component {
   render() {
@@ -20,6 +24,11 @@ class App extends Component {
             Learn React
           </a>
         </header>
+
+        <Facebook/><br/>
+        <Google/><br/>
+        <Instagram/><br/>
+        <Twitter/>
       </div>
     );
   }
