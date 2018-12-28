@@ -55,7 +55,7 @@ export default class Instagram extends Component {
         // )
       }else{
           iContent = (<InstagramLogin
-            clientId="45c2312025954c48bbb6d85b5133f04b"
+            clientId="clientId"
             cssClass="insta-login"
             implicitAuth="true"
             scope="likes+comments+follower_list"

@@ -59,7 +59,7 @@ export default class Google extends Component {
         )
       }else{
           gContent = (<GoogleLogin
-            clientId="886525486594-f9n4v3rf8q56g1qubmqs1vvvo978bmv5.apps.googleusercontent.com"
+            clientId="clientId"
             buttonText="Login with Google"
             className="login-google"
             onSuccess={this.responseGoogle}

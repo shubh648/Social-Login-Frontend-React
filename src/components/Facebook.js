@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import HostAPI from '../requests';
 import '../styles/Styles.css';
-import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt, withRouter} from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink, Redirect, withRouter} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Dashboard from './Dashboard';
 
@@ -52,7 +52,7 @@ class Facebook extends Component {
           fbContent = (<FacebookLogin
             textButton=" Login With Facebook"
             cssClass="kep-login-facebook"
-            appId="1945751425501816"
+            appId="appId"
             autoLoad={false}
             fields="name,email,friends,picture,birthday"
             scope="public_profile,user_friends,user_birthday"
