@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InstagramLogin from 'react-instagram-login';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HostAPI from '../requests';
 
 export default class Instagram extends Component {
@@ -55,11 +56,18 @@ export default class Instagram extends Component {
       }else{
           iContent = (<InstagramLogin
             clientId="45c2312025954c48bbb6d85b5133f04b"
-            buttonText="Login with Instagram"
+            cssClass="insta-login"
+            implicitAuth="true"
             scope="likes+comments+follower_list"
             onSuccess={this.responseInstagram}
             onFailure={this.responseInstagram}
-          />)
+            >
+            <FontAwesomeIcon
+            className="insta-icon"
+            icon={['fab', 'instagram']}
+            />
+            <span> Login With Instagram</span>
+            </InstagramLogin>)
       }
     return (
       <div>

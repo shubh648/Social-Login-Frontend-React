@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 import HostAPI from '../requests';
+import '../styles/Styles.css';
 
 export default class Google extends Component {
     state = {
@@ -60,6 +61,7 @@ export default class Google extends Component {
           gContent = (<GoogleLogin
             clientId="886525486594-f9n4v3rf8q56g1qubmqs1vvvo978bmv5.apps.googleusercontent.com"
             buttonText="Login with Google"
+            className="login-google"
             onSuccess={this.responseGoogle}
             onFailure={this.responseGoogleFailed}
           />)

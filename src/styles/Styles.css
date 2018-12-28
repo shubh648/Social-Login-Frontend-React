@@ -1,0 +1,61 @@
+.kep-login-facebook {
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: calc(.27548vw + 12.71074px);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .3s, border-color .3s;
+    background-color: #4c69ba;
+    border: calc(.06887vw + .67769px) solid #4c69ba;
+    padding: 8px !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 1px 2px 2px 1px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
+}
+
+.kep-login-facebook.metro {
+    border-radius: 87px !important;
+}
+
+.kep-login-facebook .fa {
+    margin-right: calc(.34435vw + 3.38843px)
+}
+
+.login-google {
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: calc(.27548vw + 12.71074px);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .3s, border-color .3s;
+    border-radius: 87px !important;
+    padding: 0 6px 0 13px !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 1px 2px 2px 1px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px !important;
+
+}
+
+.insta-login {
+    display: inline-block; 
+    background: linear-gradient(rgb(101, 89, 202), rgb(188, 49, 143) 30%, rgb(227, 63, 95) 50%, rgb(247, 118, 56) 70%, rgb(254, 198, 109) 100%); 
+    color: rgb(255, 255, 255); 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    border: 1px solid transparent; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer;
+    font-family: proxima-nova, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    border-radius: 87px !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 1px 2px 2px 1px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
+}
+
+.insta-icon{
+    width: 18px !important;
+    height: 18px !important;
+}

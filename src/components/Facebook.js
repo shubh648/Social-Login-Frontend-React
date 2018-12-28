@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import HostAPI from '../requests';
+import '../styles/Styles.css';
+import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt, withRouter} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+import Dashboard from './Dashboard';
 
-export default class Facebook extends Component {
+class Facebook extends Component {
     state = {
         isLoggedIn: false,
         userID: '',
@@ -17,19 +21,22 @@ export default class Facebook extends Component {
     }
 
     responseFacebook = async (response)=>{
-        response.userID = response.id;
-        delete response.id;
-        response.loginWith = "Facebook";
+        if(response.userID){
+            response.userID = response.id;
+            delete response.id;
+            response.loginWith = "Facebook";
+            
+            const data = await HostAPI.post('/user',response);
         
-        const data = await HostAPI.post('/user',response);
-        if(data){
-            this.setState({
-                isLoggedIn: true,
-                userID: data.userID,
-                name: data.name,
-                email: data.email,
-                picture: data.picture.data.url
-            })
+            if(data){
+                this.setState({
+                    isLoggedIn: true,
+                    userID: data.userID,
+                    name: data.name,
+                    email: data.email,
+                    picture: data.picture.data.url
+                })
+            }
         }
         
     }
@@ -37,23 +44,16 @@ export default class Facebook extends Component {
       let fbContent;
 
       if(this.state.isLoggedIn){
-        fbContent = (
-            <div style={{
-                width: '400px',
-                margin:'auto',
-                background: '#f4f4f4',
-                padding: '20px'
-            }}>
-            <img src={this.state.picture} alt={this.state.name}></img>
-            <h2>Welcome {this.state.name}</h2>
-            Email: {this.state.email}
-
-            </div>
-        )
+        
+            console.log(this.props.history)
+            
+        
       }else{
           fbContent = (<FacebookLogin
+            textButton=" Login With Facebook"
+            cssClass="kep-login-facebook"
             appId="1945751425501816"
-            autoLoad={true}
+            autoLoad={false}
             fields="name,email,friends,picture,birthday"
             scope="public_profile,user_friends,user_birthday"
             returnScopes="true"
@@ -68,3 +68,5 @@ export default class Facebook extends Component {
     )
   }
 }
+
+export default withRouter(Facebook);
