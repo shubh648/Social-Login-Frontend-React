@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import HostAPI from '../requests';
 import '../styles/Styles.css';
-import { BrowserRouter as Router, Link, NavLink, Redirect, withRouter} from 'react-router-dom';
-import Route from 'react-router-dom/Route';
-import Dashboard from './Dashboard';
+import { withRouter } from 'react-router-dom';
 
 class Facebook extends Component {
     state = {
@@ -27,43 +25,33 @@ class Facebook extends Component {
             response.loginWith = "Facebook";
             
             const data = await HostAPI.post('/user',response);
+            console.log(data);
+            
         
             if(data){
-                this.setState({
-                    isLoggedIn: true,
-                    userID: data.userID,
-                    name: data.name,
-                    email: data.email,
-                    picture: data.picture.data.url
-                })
+                return this.props.history.push({pathname: '/dashboard', isLoggedIn: true, user: data})
             }
         }
         
     }
-  render() {
-      let fbContent;
 
-      if(this.state.isLoggedIn){
-        
-            console.log(this.props.history)
-            
-        
-      }else{
-          fbContent = (<FacebookLogin
+
+
+    render() {
+
+    return (
+      <div>
+            <FacebookLogin
             textButton=" Login With Facebook"
             cssClass="kep-login-facebook"
-            appId="appId"
+            appId="1945751425501816"
             autoLoad={false}
             fields="name,email,friends,picture,birthday"
             scope="public_profile,user_friends,user_birthday"
             returnScopes="true"
             onClick={this.componentClicked}
             callback={this.responseFacebook}
-            icon="fa-facebook" />)
-      }
-    return (
-      <div>
-        {fbContent}
+            icon="fa-facebook" />
       </div>
     )
   }
