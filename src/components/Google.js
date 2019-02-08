@@ -59,7 +59,7 @@ export default class Google extends Component {
         )
       }else{
           gContent = (<GoogleLogin
-            clientId="886525486594-f9n4v3rf8q56g1qubmqs1vvvo978bmv5.apps.googleusercontent.com"
+            clientId= {process.env.REACT_APP_API_KEY_GGL}
             buttonText="Login with Google"
             className="login-google"
             onSuccess={this.responseGoogle}

@@ -44,7 +44,7 @@ class Facebook extends Component {
             <FacebookLogin
             textButton=" Login With Facebook"
             cssClass="kep-login-facebook"
-            appId="1945751425501816"
+            appId= {process.env.REACT_APP_API_KEY_FB}
             autoLoad={false}
             fields="name,email,friends,picture,birthday"
             scope="public_profile,user_friends,user_birthday"
